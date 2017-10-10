@@ -23,7 +23,8 @@ public class UIMainWorld extends World
     
     private void testActors()
     {
-        
+        Button button1 = new Button( 18, "+1", "button-blue.png", "button-green.png" );
+        addObject( button1, 450, 50 );
     }
     
     

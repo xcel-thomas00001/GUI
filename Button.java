@@ -23,6 +23,10 @@ public class Button extends Actor
         
         text1 = new GreenfootImage( message, fontSize, Color.WHITE, new Color(0, 0, 0, 0) );
         text2 = new GreenfootImage( message, fontSize, Color.BLACK, new Color(0, 0, 0, 0) );
+        
+        setImage( first );
+        
+        getImage().drawImage( text1, (getImage().getWidth() - text1.getWidth())/2, (getImage().getHeight() - text1.getHeight())/2 );
     }
     
     /**
@@ -32,5 +36,30 @@ public class Button extends Actor
     public void act() 
     {
         // Add your action code here.
-    }    
+        handleMouseClicks();
+    }  
+    
+    private void handleMouseClicks()
+    {
+        if( Greenfoot.mousePressed(this) )
+        {
+            setImage( second );
+            getImage().drawImage( text2, (getImage().getWidth() - text2.getWidth())/2, (getImage().getHeight() - text2.getHeight())/2 );
+        }
+        else if( Greenfoot.mouseClicked(this) )
+        {
+            setImage( first );
+            getImage().drawImage( text1, (getImage().getWidth() - text1.getWidth())/2, (getImage().getHeight() - text1.getHeight())/2 );
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }
